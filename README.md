@@ -14,8 +14,7 @@ Proyecto educativo de una tienda virtual desarrollada con Flask. Incluye:
 
 ## Uso
 
-bash
+```bash
 pip install -r requirements.txt
 python app.py
 Abre en tu navegador http://localhost:5000
-```bash
