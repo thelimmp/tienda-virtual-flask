@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Catálogo de Productos</h1>
+    
+   <!-- Filtro por categorías -->
+<div class="mb-4">
+    <div class="btn-group" role="group">
+        <a href="/" class="btn btn-outline-primary {% if not categoria_seleccionada %}active{% endif %}">Todos</a>
+        {% for categoria in categorias %}
+        <a href="{{ url_for('filtrar_por_categoria', nombre_categoria=categoria) }}" 
+           class="btn btn-outline-primary {% if categoria == categoria_seleccionada %}active{% endif %}">
+            {{ categoria }}
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+    <div class="row">
+        {% for producto in productos %}
+        <div class="col-md-4 col-lg-3 mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='images/' + producto.imagen) }}" 
+                     class="card-img-top" alt="{{ producto.nombre }}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ producto.nombre }}</h5>
+                    <p class="card-text">{{ producto.categoria }}</p>
+                    <p class="card-price">${{ "%.2f"|format(producto.precio) }}</p>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('agregar_al_carrito', producto_id=producto.id) }}" 
+                           class="btn btn-primary w-100">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

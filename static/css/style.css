@@ -1,0 +1,87 @@
+/* Estilos para los botones de cantidad */
+.btn-group-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.btn-quantity {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Estilos para las imágenes de productos */
+.card-img-top {
+    height: 180px;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+/* Estilos para los precios */
+.card-price {
+    font-size: 1.25rem;
+    color: #0d6efd;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Efecto hover para las filas de la tabla */
+.table tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Estilos para los botones de acción */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Estilos para el botón de proceder al pago */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-weight: 500;
+}
+
+/* Estilos para el filtro de categorías */
+.btn-group .btn-outline-primary {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px !important;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+    }
+    
+    .btn-group {
+        flex-wrap: wrap;
+    }
+}
+/* Estilos para los botones de cantidad */
+.btn-outline-primary, .btn-outline-secondary {
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Efecto hover para los botones */
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Transición suave para los botones */
+.btn {
+    transition: all 0.2s ease;
+}
