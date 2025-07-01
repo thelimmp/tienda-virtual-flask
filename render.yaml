@@ -2,6 +2,7 @@ services:
   - type: web
     name: tienda-virtual
     env: python
+    plan: free  # 👈 esta línea es CLAVE
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn app:app"
     envVars:
